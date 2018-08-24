@@ -84,11 +84,11 @@ lightGrey =
 
 
 grey =
-    makeGrey 0.7
+    makeGrey 0.8
 
 
 darkGrey =
-    makeGrey 0.4
+    makeGrey 0.7
 
 
 
