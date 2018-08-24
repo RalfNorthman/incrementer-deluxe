@@ -1,14 +1,13 @@
 module Main exposing (main)
 
-import Color exposing (..)
 import Element exposing (..)
+import Browser exposing (sandbox)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input exposing (button)
 import Html exposing (Html)
 import List
-import Regex exposing (regex, replace)
 
 
 -- Model
@@ -73,6 +72,26 @@ update msg model =
 
 
 
+-- Colors
+
+
+makeGrey number =
+    rgb number number number
+
+
+lightGrey =
+    makeGrey 0.9
+
+
+grey =
+    makeGrey 0.7
+
+
+darkGrey =
+    makeGrey 0.4
+
+
+
 -- View Helpers
 
 
@@ -80,7 +99,7 @@ googleFont : String -> Attribute Msg
 googleFont fontName =
     let
         fontString =
-            replace Regex.All (regex " ") (\_ -> "+") fontName
+            String.replace " " "+" fontName
     in
         Font.family
             [ Font.external
@@ -108,9 +127,9 @@ modButton amount =
     let
         label =
             if amount < 0 then
-                toString amount
+                String.fromInt amount
             else
-                "+" ++ toString amount
+                "+" ++ String.fromInt amount
     in
         button buttonStyle
             { onPress = Just <| Modify amount
@@ -122,7 +141,7 @@ middleText : String -> Int -> Element Msg
 middleText label number =
     row [ centerX, width <| px 210, paddingXY 10 0 ]
         [ text <| label ++ ":"
-        , el [ alignRight ] <| text <| toString number
+        , el [ alignRight ] <| text <| String.fromInt number
         ]
 
 
@@ -139,13 +158,6 @@ middleRow valueType value reset =
     row
         [ spacing 5
         , paddingXY 10 5
-
-        --  , paddingEach
-        --      { left = 5
-        --      , bottom = 0
-        --      , top = 0
-        --      , right = 0
-        --      }
         ]
         [ middleText valueType value
         , resetButton reset
@@ -188,10 +200,10 @@ view model =
 -- Main
 
 
-main : Program Never Model Msg
+main : Program () Model Msg
 main =
-    Html.beginnerProgram
-        { model = initialModel
+    Browser.sandbox
+        { init = initialModel
         , view = view
         , update = update
         }
