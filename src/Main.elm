@@ -102,7 +102,9 @@ googleFont fontName =
     in
         Font.family
             [ Font.external
-                { url = "https://fonts.googleapis.com/css?family=" ++ fontString
+                { url =
+                    "https://fonts.googleapis.com/css?family="
+                        ++ fontString
                 , name = fontName
                 }
             ]
@@ -136,6 +138,11 @@ modButton amount =
             }
 
 
+buttonRow : List Int -> Element Msg
+buttonRow buttonArgList =
+    row [ spacing 5 ] <| List.map modButton buttonArgList
+
+
 middleText : String -> Int -> Element Msg
 middleText label number =
     row [ centerX, width <| px 210, paddingXY 10 0 ]
@@ -161,11 +168,6 @@ middleRow valueType value reset =
         [ middleText valueType value
         , resetButton reset
         ]
-
-
-buttonRow : List Int -> Element Msg
-buttonRow buttonArgList =
-    row [ spacing 5 ] <| List.map modButton buttonArgList
 
 
 
