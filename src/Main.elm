@@ -7,7 +7,6 @@ import Element.Border as Border
 import Element.Font as Font
 import Element.Input exposing (button)
 import Html exposing (Html)
-import List
 
 
 -- Model
@@ -164,6 +163,11 @@ middleRow valueType value reset =
         ]
 
 
+buttonRow : List Int -> Element Msg
+buttonRow buttonArgList =
+    row [ spacing 5 ] <| List.map modButton buttonArgList
+
+
 
 -- View
 
@@ -188,11 +192,11 @@ view model =
             , width <| px 275
             , alignLeft
             ]
-            [ row [ spacing 5 ] <| List.map modButton [ 1, 10, 100, 1000 ]
+            [ buttonRow [ 1, 10, 100, 1000 ]
             , middleRow "Maximum" model.maximum ResetMax
             , middleRow "Current" model.current ResetCurrent
             , middleRow "Minimum" model.minimum ResetMin
-            , row [ spacing 5 ] <| List.map modButton [ -1, -10, -100, -1000 ]
+            , buttonRow [ -1, -10, -100, -1000 ]
             ]
 
 
