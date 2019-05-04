@@ -1,12 +1,13 @@
 module Main exposing (main)
 
-import Element exposing (..)
 import Browser exposing (sandbox)
+import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input exposing (button)
 import Html exposing (Html)
+
 
 
 -- Model
@@ -46,11 +47,11 @@ update msg model =
                 newCurrent =
                     model.current + x
             in
-                { model
-                    | current = newCurrent
-                    , maximum = max newCurrent model.maximum
-                    , minimum = min newCurrent model.minimum
-                }
+            { model
+                | current = newCurrent
+                , maximum = max newCurrent model.maximum
+                , minimum = min newCurrent model.minimum
+            }
 
         ResetCurrent ->
             { model
@@ -100,14 +101,14 @@ googleFont fontName =
         fontString =
             String.replace " " "+" fontName
     in
-        Font.family
-            [ Font.external
-                { url =
-                    "https://fonts.googleapis.com/css?family="
-                        ++ fontString
-                , name = fontName
-                }
-            ]
+    Font.family
+        [ Font.external
+            { url =
+                "https://fonts.googleapis.com/css?family="
+                    ++ fontString
+            , name = fontName
+            }
+        ]
 
 
 buttonStyle : List (Attribute Msg)
@@ -129,13 +130,14 @@ modButton amount =
         label =
             if amount < 0 then
                 String.fromInt amount
+
             else
                 "+" ++ String.fromInt amount
     in
-        button buttonStyle
-            { onPress = Just <| Modify amount
-            , label = text label
-            }
+    button buttonStyle
+        { onPress = Just <| Modify amount
+        , label = text label
+        }
 
 
 buttonRow : List Int -> Element Msg
