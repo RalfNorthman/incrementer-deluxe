@@ -189,12 +189,14 @@ view model =
         }
         [ padding 50
         , googleFont "Fjalla One"
+        , width fill
         ]
     <|
         column
             [ spacing 5
             , width <| px 275
             , alignLeft
+            , centerX
             ]
             [ buttonRow [ 1, 10, 100, 1000 ]
             , middleRow "Maximum" model.maximum ResetMax
