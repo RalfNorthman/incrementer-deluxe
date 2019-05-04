@@ -1,11 +1,11 @@
 {
-  "main.css": "/static/css/main.498c8900.chunk.css",
-  "main.js": "/static/js/main.1c288bd7.chunk.js",
-  "main.css.map": "/static/css/main.498c8900.chunk.css.map",
-  "main.js.map": "/static/js/main.1c288bd7.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.d53d57e4.js",
-  "runtime~main.js.map": "/static/js/runtime~main.d53d57e4.js.map",
-  "vendors~main.js": "/static/js/vendors~main.3ca81432.chunk.js",
-  "vendors~main.js.map": "/static/js/vendors~main.3ca81432.chunk.js.map",
-  "index.html": "/index.html"
+  "main.css": "/incrementer-deluxe/static/css/main.498c8900.chunk.css",
+  "main.js": "/incrementer-deluxe/static/js/main.26c37851.chunk.js",
+  "main.css.map": "/incrementer-deluxe/static/css/main.498c8900.chunk.css.map",
+  "main.js.map": "/incrementer-deluxe/static/js/main.26c37851.chunk.js.map",
+  "runtime~main.js": "/incrementer-deluxe/static/js/runtime~main.bc4311df.js",
+  "runtime~main.js.map": "/incrementer-deluxe/static/js/runtime~main.bc4311df.js.map",
+  "vendors~main.js": "/incrementer-deluxe/static/js/vendors~main.3ca81432.chunk.js",
+  "vendors~main.js.map": "/incrementer-deluxe/static/js/vendors~main.3ca81432.chunk.js.map",
+  "index.html": "/incrementer-deluxe/index.html"
 }
