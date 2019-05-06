@@ -1,6 +1,6 @@
 # incrementer-deluxe
 
-A silly little Elm app that takes advantage of the excellent `mdgriffith/elm-ui` package.
+A silly little Elm app that takes advantage of the excellent [`mdgriffith/elm-ui`](https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest) package.
 
 See it in action:
 
